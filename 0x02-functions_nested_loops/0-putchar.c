@@ -7,7 +7,6 @@
  *
  * Retun: Always 0 (Success)
 */
-
 int main(void)
 {
 	char str[] = "_putchar";
