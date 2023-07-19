@@ -1,17 +1,24 @@
 #include "main.h"
 
 /**
- * _abs - function that compute the absolute
- * value of an integer
+ * jack_bauer - pints every minute of the day
  *
- * @n: takes in integer type input for function.
- *
- * Return: Always 0 (Success)
 */
-int _abs(int n)
+void jack_bauer(void)
 {
 
-	if (n < 0)
-		n = (-1) * n;
-	return (n);
+	int min, hr;
+
+	for (hr = 0; hr <= 23; hr++)
+	{
+		for (min = 0; min <= 59; min++)
+		{
+			_putchar((hr / 10) + 48);
+			_putchar((hr % 10) + 48);
+			_putchar(':');
+			_putchar((min / 10) + 48);
+			_putchar((min % 10) + 48);
+			_putchar('\n');
+		}
+	}
 }
