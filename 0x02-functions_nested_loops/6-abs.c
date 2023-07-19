@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isalpha - function that compute the absolute
+ * _abs - function that compute the absolute
  * value of an integer
  *
  * @n: takes in integer type input for function.
