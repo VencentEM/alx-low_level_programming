@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- * _isupper -check if c is upper
+ * print_number - print 0 - 9
+ * only using _putchar twice
  *
- * @c: input for alphabet
- *
- * Return: 1 if its uppercase, 0 if not
+ * Return: Always 0 (Success)
  */
-int _isupper(int c)
+void print_numbers(void)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	else
-		return (0);
+	int num = 0;
+
+	do {
+		_putchar(num + 48);
+		num++;
+	} while (num >= 0 && num <= 9);
+	_putchar('\n');
 }
