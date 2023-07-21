@@ -1,21 +1,31 @@
 #include "main.h"
 
 /**
- * print_line - print a straight line
+ * print_triangle - function that prints a triangle, followed by a new line.
  *
- * @n: is the number of times the _ character
- * should be printed
+ * @size: the size of the triangle
+ *
+ * Return: void
  */
-void print_line(int n)
-{
-	int lnChr;
 
-	if (n <= 0)
+void print_triangle(int size)
+{
+	int i, j;
+
+	if (size <= 0)
 		_putchar('\n');
 	else
 	{
-		for (lnChr = 1; lnChr <= n; lnChr++)
-			_putchar('_');
-		_putchar('\n');
+		for (i = 0; i < size; i++)
+		{
+			for (j = 0; j < size; j++)
+			{
+				if (j + i + 1 < size)
+					_putchar(' ');
+				else
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
 	}
 }
