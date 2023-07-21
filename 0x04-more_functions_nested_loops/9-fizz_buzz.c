@@ -1,21 +1,31 @@
 #include "main.h"
 
 /**
- * print_line - print a straight line
+ * main - function that prints numbers from 0 to 100
+ * but for multiples of 3 prints Fizz and for multiples of 5 prints Buzz
+ * and for multiples of both prints FizzBuzz
  *
- * @n: is the number of times the _ character
- * should be printed
+ * Return: 0
  */
-void print_line(int n)
+int main(void)
 {
-	int lnChr;
+	int i;
 
-	if (n <= 0)
-		_putchar('\n');
-	else
+	for (i = 1; i <= 100; i++)
 	{
-		for (lnChr = 1; lnChr <= n; lnChr++)
-			_putchar('_');
-		_putchar('\n');
+		if (i == 100)
+		{
+			printf("Buzz\n");
+			break;
+		}
+		if (i % 3 == 0 && i % 5 == 0)
+			printf("FizzBuzz ");
+		else if (i % 3 == 0)
+			printf("Fizz ");
+		else if (i % 5 == 0)
+			printf("Buzz ");
+		else
+			printf("%d ", i);
 	}
+	return (0);
 }
