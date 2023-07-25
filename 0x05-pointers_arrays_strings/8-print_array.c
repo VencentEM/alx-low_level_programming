@@ -1,15 +1,24 @@
 #include "main.h"
 
 /**
- * reset_to_98 - takes a pointer to an int parameter
- * and update the value it point to 98
+ * print_array - print n element of an array of integers
  *
- * @n: int paramater
+ * @n: element input paramater
+ * @a: string paramater input
  *
  * Return: Nothing
  */
 
-void reset_to_98(int *n)
+void print_array(int *a, int n)
 {
-	*n = 98;
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		if (i != (n - 1))
+			printf("%d, ", a[i]);
+		else
+			printf("%d", a[i]);
+	}
+	printf("\n");
 }

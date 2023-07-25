@@ -1,15 +1,22 @@
 #include "main.h"
 
 /**
- * reset_to_98 - takes a pointer to an int parameter
- * and update the value it point to 98
- *
- * @n: int paramater
- *
- * Return: Nothing
+ * puts_half - print second half of a string
+ * @str: char array string type
+ * Description: If odd number of char, print [length - 1] /2
  */
 
-void reset_to_98(int *n)
+void puts_half(char *str)
 {
-	*n = 98;
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++]
+			;
+
+	i++;
+	for (i /= 2; str[i] !'\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 }
