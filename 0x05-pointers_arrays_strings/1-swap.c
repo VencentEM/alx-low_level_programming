@@ -1,16 +1,20 @@
 #include "main.h"
 
 /**
+ * swap_int - swap the value of two integres
+ * using two input parameter
  *
- * reset_to_98 - takes a pointer to an int parameter
- * and update the value it point to 98
- *
- * @n: int paramater
+ * @a: input paramater 1
+ * @b: input parameter 2
  *
  * Return: Nothing
  */
 
-void reset_to_98(int *n)
+void swap_int(int *a, int *b)
 {
-	*n = 98;
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
