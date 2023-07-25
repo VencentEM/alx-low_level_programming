@@ -3,9 +3,9 @@
 /**
  * _strlen - returns the length of a string
  *
- * @s: sting parameter input 
+ * @s:sting parameter input
  *
- * Return: Length of string
+ * Return:Length of string
  */
 
 int _strlen(char *s)
