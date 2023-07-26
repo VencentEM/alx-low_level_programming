@@ -1,13 +1,31 @@
-#include <unistd.h>
+#include <main.h>
 
 /**
- * _putchar - writes the characters c to stdout
- * @c: the character to print
+ * _strncpy - a fonction tha copies string
  *
- * Return: On success 1.
- * On error, -1 is returned and errnois set appropriately
+ * @dest: pointer to destination input buffer
+ * @src: pointer to source input beffer
+ * @n: bytes of @src
+ *
+ * Return: @dest
  */
-int _putchar(char c)
+char *_strncpy(char *dest, char *src, int n)
 {
-	return (write(1, &c, 1));
+	int i;
+
+	/**
+	 * interate through src array
+	 * where if there is no null byte
+	 * amoung first n bytes of source
+	 * the sting placed in dest will not be
+	 * null terminatated
+	*/
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	while (i < n )
+	{
+		dest[i] = '\0';
+		i++
+	}
+	return (dest);
 }
