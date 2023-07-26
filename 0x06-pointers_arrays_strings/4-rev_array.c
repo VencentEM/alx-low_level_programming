@@ -1,13 +1,20 @@
-#include <unistd.h>
+#include <main.h>
 
 /**
- * _putchar - writes the characters c to stdout
- * @c: the character to print
+ * reserve_array - reserve the content of an array of integers
+ * @a: an array of integers
+ * @n: the number of element to swap
  *
- * Return: On success 1.
- * On error, -1 is returned and errnois set appropriately
+ * Return: nothing
  */
-int _putchar(char c)
+void reverse_array(int *a, int n)
 {
-	return (write(1, &c, 1));
+	int i, j, t;
+
+	for (i = 0, j = (n - 1); i < j; i++, j--)
+	{
+		t = a[i];
+		a[i] = a[j];
+		a[j] = t;
+	}
 }
