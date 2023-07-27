@@ -1,13 +1,21 @@
-#include <unistd.h>
+#include <main.h>
 
 /**
- * _putchar - writes the characters c to stdout
- * @c: the character to print
- *
- * Return: On success 1.
- * On error, -1 is returned and errnois set appropriately
+ * *string_toupper - changes all lovercase letters of a string to upper
+ * 
+ * @str: string to return
+ * Return: string
  */
-int _putchar(char c)
+char *string_toupper(char *)
 {
-	return (write(1, &c, 1));
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] >= 97 && str[i] <= 122)
+		{
+			str[i] = str[i] - 32;
+		}
+	}
+	return (str);
 }
