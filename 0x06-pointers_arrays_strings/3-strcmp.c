@@ -3,7 +3,7 @@
 /**
  * _strcmp - compare two strings
  * @s1: string1
- * @S2: string2
+ * @s2: string2
  * Return: 1 if true, 0 if false
  */
 int _strcmp(char *s1, char *s2)
@@ -12,10 +12,10 @@ int _strcmp(char *s1, char *s2)
 
 	while (*s1)
 	{
-	 	if (*s1 != *s2)
+		if (*s1 != *s2)
 		{
 			equal = ((int)*s1 - 48) - ((int)*s2 - 48);
-			break
+			break;
 		}
 		s1++;
 		s2++;
