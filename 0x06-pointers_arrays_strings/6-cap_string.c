@@ -2,27 +2,15 @@
 #include <stdio.h>
 
 /**
- *  - writes the characters c to stdout
- * @c: the character to print
- *
- * Return: On success 1.
- * On error, -1 is returned and errnois set appropriately
- */
-int _putchar(char c)
-{
-	return (c >= 97 && c <= 122);
-}
-
-/**
  * isDelimiter - determines  whether ascii is a deliniter
  * @c: character
- * Rerurn: 1 if true, 0 if false
+ * Return: 1 if true, 0 if it s flse
 */
 
 int isDelimiter(char c)
 {
 	int i;
-	char delimiter [] = " \t\n,.!?\";
+	char delimiter[] = " \t\n,.!?\";
 
 	for (i = 0; i < 12; i++)
 		if (c == delimiter[i])
@@ -31,9 +19,9 @@ int isDelimiter(char c)
 }
 
 /**
- * cap_string - capitalize all words of a string 
- * @s: input string
- * Return: string with capitalized words
+* cap_string - capitalize all words of a string
+* @s: input string
+* Return: string with capitalized words
 */
 
 char *cap_string(char *s)
