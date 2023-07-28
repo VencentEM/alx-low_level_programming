@@ -1,46 +1,35 @@
-#include "main.h"
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * isDelimiter - determines  whether ascii is a deliniter
- * @c: character
- * Return: 1 if true, 0 if it s flse
-*/
-
-int isDelimiter(char c)
+ *  * cap_string - Capitalizes all words of a string.
+ *   * @str: The string to be capitalized.
+ *    *
+ *     * Return: A pointer to the changed string.
+ *      */
+char *cap_string(char *str)
 {
-	int i;
-	char delimiter[] = " \t\n,.!?\";
+		int index = 0;
 
-	for (i = 0; i < 12; i++)
-		if (c == delimiter[i])
-			return(1);
-	return (0);
-}
+			while (str[index])
+					{
+								while (!(str[index] >= 'a' && str[index] <= 'z'))
+												index++;
 
-/**
-* cap_string - capitalize all words of a string
-* @s: input string
-* Return: string with capitalized words
-*/
+										if (str[index - 1] == ' ' ||
+														    str[index - 1] == '\t' ||
+														    		    str[index - 1] == '\n' ||
+																    		    str[index - 1] == ',' ||
+																		    		    str[index - 1] == ';' ||
+																				    		    str[index - 1] == '.' ||
+																						    		    str[index - 1] == '!' ||
+																								    		    str[index - 1] == '?' ||
+																										    		    str[index - 1] == '"' ||
+																												    		    str[index - 1] == '(' ||
+																														    		    str[index - 1] == ')' ||
+																																    		    str[index - 1] == '{' ||
+																																		    		    str[index - 1] == '}' ||
+																																				    		    index == 0)
+			str[index] -= 32;
 
-char *cap_string(char *s)
-{
-	char *ptr = s;
-	int foundDelimit = 1;
-
-	while (*s)
-	{
-		if (isDelimiter(*s))
-			foundDelimit = 1;
-		else if (isLower(*s) && foundDelimit)
-		{
-			*s -= 32;
-			foundDelimit = 0;
-		}
-		else
-			foundDelimit = 0;
-		s++
-	}
-	return (ptr);
+index++;
 }
