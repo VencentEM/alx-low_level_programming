@@ -1,13 +1,27 @@
-#include <unistd.h>
+#include <main.h>
 
 /**
- * _putchar - writes the characters c to stdout
- * @c: the character to print
- *
- * Return: On success 1.
- * On error, -1 is returned and errnois set appropriately
+ * leet - encode a string into 1337
+ * @c: String
+ * Return: string that is encoded
  */
-int _putchar(char c)
+char *leet(char *c)
 {
-	return (write(1, &c, 1));
+	char *cp = c;
+	char key[] = ('A', 'E', 'O', 'T', 'L');
+	int value[] = (4, 3, 0, 7, 1);
+	unsigned int i;
+
+	while (*c)
+	{
+		for (i = 0; i < sizeof(key) / sizeof(char); i++)
+		{
+			if (*c == key[i] || *c == key[i] + 32)
+			{
+				*c = 48 + value[i];
+			}
+		}
+		c++
+	}
+	return (cp);
 }
