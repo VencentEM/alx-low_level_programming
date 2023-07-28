@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * reserve_array - reserve the content of an array of integers
+ * reverse_array - reserve the content of an array of integers
  * @a: an array of integers
  * @n: the number of element to swap
  *
