@@ -5,7 +5,7 @@
  * Return: s
  */
 
-char rot13(chars)
+char *rot13(char *)
 {
 	 char fh[] = {'A', 'B', 'C', 'D', 'E', 'F',
 		 'G', 'H', 'I', 'J', 'K', 'L',
