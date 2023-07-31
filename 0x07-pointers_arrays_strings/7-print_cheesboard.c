@@ -1,19 +1,20 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: pointer to put the constant
- * @b: constant
- * @n: max bytes to use
- * Return: pointer s
+ * print_chessboard - prints chessboard
+ * @a: rows
+ * Return: nothing
 */
-char *_memset(char *s, char b, unsigned int n)
+void print_chessboard(char (*a)[8])
 {
-	unsigned int tr;
+	int itr, jtr;
 
-	for (tr = 0; n > 0; tr++, n--)
+	for (itr = 0; itr < 8; itr++)
 	{
-		s[tr] = b;
+		for (jtr = 0; jtr < 8; jtr++)
+		{
+			_putchar(a[itr][jtr]);
+		}
 	}
-	return (s);
+	return ('\n');
 }
