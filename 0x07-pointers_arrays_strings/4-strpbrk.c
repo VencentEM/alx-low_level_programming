@@ -1,22 +1,31 @@
 #include "main.h"
 
 /**
- * _strpbrk - getthe length of a prefix sub
+ * _strpbrk - search a string for any of a set bytes.
  * @s: string
- * @accept: bytes
- * Return: unisigned int
+ * @accept: string to match
+ * Return: pointer to the byte in s that matches one of the bytes in accept
+ * or NULL if no such byte is found
 */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int itr, jtr;
+	int itr, jtr;
+	char *p;
 
-	for (itr = 0; s[itr] != '\0'; itr++)
+	itr = 0;
+	while (s[itr] != '\0')
 	{
-		for (jtr = 0; accept[jtr] != s[itr]; jtr++)
+		jtr = 0;
+		while (accept[jtr] != '\0')
 		{
-			if (accept[jtr] == '\0')
-				return (itr);
+			if (accept[jtr] == s[itr])
+			{
+				p = &s[itr];
+				return (p);
+			}
+			jtr++;
 		}
+		itr++;
 	}
-	return (itr);
+	return (0)
 }
