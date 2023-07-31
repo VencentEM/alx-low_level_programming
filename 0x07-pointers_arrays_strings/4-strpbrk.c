@@ -1,19 +1,22 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: pointer to put the constant
- * @b: constant
- * @n: max bytes to use
- * Return: pointer s
+ * _strpbrk - getthe length of a prefix sub
+ * @s: string
+ * @accept: bytes
+ * Return: unisigned int
 */
-char *_memset(char *s, char b, unsigned int n)
+char *_strpbrk(char *s, char *accept)
 {
-	unsigned int tr;
+	unsigned int itr, jtr;
 
-	for (tr = 0; n > 0; tr++, n--)
+	for (itr = 0; s[itr] != '\0'; itr++)
 	{
-		s[tr] = b;
+		for (jtr = 0; accept[jtr] != s[itr]; jtr++)
+		{
+			if (accept[jtr] == '\0')
+				return (itr);
+		}
 	}
-	return (s);
+	return (itr);
 }
