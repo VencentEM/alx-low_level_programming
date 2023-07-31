@@ -1,19 +1,27 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: pointer to put the constant
- * @b: constant
- * @n: max bytes to use
- * Return: pointer s
+ * *_strstr - Entry point
+ * @haystack: input
+ * @needle: input
+ * Return: always 0 (success)
 */
-char *_memset(char *s, char b, unsigned int n)
+char *_strstr(char *haystack, char *needle)
 {
-	unsigned int tr;
-
-	for (tr = 0; n > 0; tr++, n--)
+	for (; *haystack != '\0'; haystack++)
 	{
-		s[tr] = b;
+		char *l = haystack;
+		char *p = needle;
+
+		while ( *l == *p && *p != '\0')
+		{
+			l++;
+			p++;
+		}
+		
+		if (*p == '\0')
+			return(haystack);
 	}
-	return (s);
+	
+	return(0);
 }
