@@ -1,19 +1,21 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: pointer to put the constant
- * @b: constant
- * @n: max bytes to use
- * Return: pointer s
+ * print_diagsums - description
+ * @a: 2d array of int types
+ * @size: size of array [square]
 */
-char *_memset(char *s, char b, unsigned int n)
+void print_diagsums(int *a, int size)
 {
-	unsigned int tr;
+	int itr, s1 = 0, s2 = 0;
 
-	for (tr = 0; n > 0; tr++, n--)
+	for (itr = 0; itr < size; itr++)
 	{
-		s[tr] = b;
+		s1 += a[itr];
+		s2 += a[size - itr - 1];
+		a += size;
 	}
-	return (s);
+	printf("%d, ", s1);
+	printf("%d\n", s2);
 }
