@@ -1,19 +1,21 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
+ * *_strchr - fills memory with a constant byte
  * @s: pointer to put the constant
- * @b: constant
- * @n: max bytes to use
- * Return: pointer s
+ * @c: constant
+ * Return: pointer 0
 */
-char *_memset(char *s, char b, unsigned int n)
+char *_strchr(char *s, char c)
 {
-	unsigned int tr;
+	int tr;
 
-	for (tr = 0; n > 0; tr++, n--)
+	for (tr = 0; s[tr] >= '\0' ; tr++)
 	{
-		s[tr] = b;
+		if (s[tr] == c)
+		{
+			return (s + tr);
+		}
 	}
-	return (s);
+	return ('\0');
 }
