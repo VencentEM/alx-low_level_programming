@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * _puts_recursion -print a string following by new line
- * @s: pointer to string
- * return: void
+ * factorial - function that returns the factorial of a given number.
+ * @n: int
+ * return: int
 */
 
-void _puts_recursion(char *s)
+int factorial(int n)
 {
-	if (*s == '\0')
+	if (n < 0)
 	{
-		_putchar('\n');
+		return(-1);
 	}
-	else
+	else if (n == 0)
 	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
+		return (1);
 	}
+	return (n * factorial(n - 1));
 }
