@@ -18,7 +18,7 @@ int is_prime_number(int n)
  * @othrn: int
  * Return: int
  */
-int check_prime(int n, int othrn);
+int check_prime(int n, int othrn)
 {
 	if (othrn >= n && n > 1)
 		return (1);
