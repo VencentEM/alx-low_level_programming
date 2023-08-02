@@ -1,20 +1,30 @@
 #include "main.h"
 
 /**
- * _puts_recursion -print a string following by new line
- * @s: pointer to string
- * return: void
+ * _sqrt_recursion - find natural square root
+ * @n: int
+ * @val: square root
+ * return: int
 */
 
-void _puts_recursion(char *s)
+int square(int n, int val);
+int _sqrt_recursion(int n)
 {
-	if (*s == '\0')
-	{
-		_putchar('\n');
-	}
+	return (n, 1));
+}
+
+/**
+ * square -find square root
+ * @n: int to find square root
+ * @val: square root
+ * Return: int
+*/
+int square(int n, int val)
+{
+	if (val * val == n)
+		return (val);
+	else if (val * val < n)
+		return (square(n,val + 1));
 	else
-	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
-	}
+		return (-1);
 }
