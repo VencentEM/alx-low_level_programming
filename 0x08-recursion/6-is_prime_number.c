@@ -1,20 +1,29 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _puts_recursion -print a string following by new line
- * @s: pointer to string
- * return: void
+ * is_prime_number - check if n is a prime number
+ * @othrn: int
+ * @n: int
+ * Return: 0 or 1
 */
-
-void _puts_recursion(char *s)
+int check_prime(int n, int othrn);
+int is_prime_number(int n)
 {
-	if (*s == '\0')
-	{
-		_putchar('\n');
-	}
-	else
-	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
-	}
+	return (check_prime(n, 2));
+}
+/*
+ * check_prime - check all number < n if they can divise it
+ * @n: int
+ * @othrn: int
+ * Return: int
+ */
+int check_prime(int n, int othrn);
+}
+	if (othrn >= n && n > 1)
+		return (1);
+	else if (n % othrn == 0 || n <= 1)
+		return (0);
+		else
+		return (check_prime(n, othrn + 1));
 }
