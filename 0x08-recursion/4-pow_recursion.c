@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * _puts_recursion -print a string following by new line
- * @s: pointer to string
- * return: void
+ * _pow_recursion - search a sting for any of a set of bytes
+ * @x: base
+ * @y: exposant
+ * Return: pointer to the byte 's'that matches one of the bytes
+ * in 'accept'or NULL if no such byte is found.
 */
 
-void _puts_recursion(char *s)
+int _pow_recursion(int x, int y)
 {
-	if (*s == '\0')
-	{
-		_putchar('\n');
-	}
-	else
-	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
-	}
+	if (y < 0)
+		return (-1);
+	else if (y == 1)
+		return (x);
+	else if (y == 0)
+		return (1);
+	return (x * _pow_recursion(x, y - 1));
 }
