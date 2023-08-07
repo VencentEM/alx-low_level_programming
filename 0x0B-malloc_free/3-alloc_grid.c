@@ -1,21 +1,40 @@
 #include "main.h"
 
 /**
- * *create_array - creates an array of chars,
- * and initialize it with a specific char.
- * @size: size of the array
- * @c: char to initialize
- * Return: pointer to the array initialized or NULL
+ * **alloc_grid - returns a pointer to a 2 dimensional array of integers.
+ * @width: int
+ * @height: int
+ * Return: 2d array
  */
 
-char *create_array(unsigned int size, char c)
+int **alloc_grid(int width, int height)
 {
-	char *n = malloc(size);
+	int **tab, i, j;
 
-	if (size == 0 || n == 0)
-		return (0);
-	while (size--)
-		n[size] = c;
+	tab = malloc(sizeof(*tab) * height);
 
-	return (n);
+	if (width <= 0 || height  <= 0 || tab == 0)
+	{
+		return (NULL);
+	}
+	else
+	{
+		for (i = 0; i < height; i++)
+		{
+			tab[i] = malloc(sizeof(**tab) * width);
+			if (tab[i] == 0)
+			{
+				/*Free everything if malloc fails*/
+				while (i--)
+					free(tab[i]);
+				free(tab);
+				return (NULL);
+			}
+
+			for (j = 0; j < width; j++)
+				tab[i][j] = 0;
+		}
+	}
+
+	return (tab);
 }
