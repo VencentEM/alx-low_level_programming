@@ -1,21 +1,49 @@
 #include "main.h"
 
 /**
- * *create_array - creates an array of chars,
- * and initialize it with a specific char.
- * @size: size of the array
- * @c: char to initialize
- * Return: pointer to the array initialized or NULL
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
  */
 
-char *create_array(unsigned int size, char c)
+char _strlen(char *s)
 {
-	char *n = malloc(size);
+	int size = 0;
+	for (; s[size] != '\0'; size++)
+	;
+	return (size);
+}
 
-	if (size == 0 || n == 0)
+/**
+ *  *str_concat - concatenates two strings
+ *  @s1: string 1
+ *  @s2: string 2
+ *  Return: pointer
+ */
+
+char *str_concat(char *s1, char *s2)
+{
+	int size1, size2, i;
+	char *m;
+
+	if (s1 == NULL)
+		s1 = "\0";
+	if (s2 == NULL)
+		s2 = "\0";
+
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+	m = malloc((size1 + size2) *sizeof(char) + 1);
+	if (m == 0)
 		return (0);
-	while (size--)
-		n[size] = c;
 
-	return (n);
+	for (i = 0; i <= size1 + size2; i++)
+	{
+		if ( i < size1)
+			m[i] = s1[i];
+		else
+			m[i] = s2[i - size1];
+	}
+	m[1] = '\0';
+	return (m);
 }
