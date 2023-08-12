@@ -1,17 +1,30 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
- * *malloc_checked - allocated memory using malloc and exit if failed
- * @b: int
- * Return: pointer to the array initialized or NULL
+ * *array_range - creates an array of integers
+ * @min: minimum range of values stored
+ * @max: maximum range of values stored and number of elements
+ *
+ * Return: pointer to the new array
  */
-
-void *malloc_checked(unsigned int b)
+int *array_range(int min, int max)
 {
-	int *m = malloc(b);
+	int *ptr;
+	int i, size;
 
-	if (m == 0)
-		exit(98);
+	if (min > max)
+		return (NULL);
 
-	return (m);
+	size = max - min + 1;
+
+	ptr = malloc(sizeof(int) * size);
+
+	if (ptr == NULL)
+		return (NULL);
+
+	for (i = 0; min <= max; i++)
+		ptr[i] = min++;
+
+	return (ptr);
 }
