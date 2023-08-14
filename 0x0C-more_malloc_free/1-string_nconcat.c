@@ -15,7 +15,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *s;
 
 		if (s1 == NULL)
-		{	
+		{
 		x = 0;
 		}
 		else
@@ -30,7 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 		{
 			for (y = 0; s2[y]; ++y)
-		;
+			;
 		}
 		if (y > n)
 			y = n;
@@ -44,4 +44,3 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s[x + y] = '\0';
 		return (s);
 }
-
