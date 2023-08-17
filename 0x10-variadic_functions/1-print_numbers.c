@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - prints numbers followed by a new line
+ * print_numbers - unction that prints numbers, followed by a new line
  * @n: number of parameter
  * @separator: separator between two numbers
  * Return: Always 0
@@ -9,7 +9,7 @@
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i;
+	unsigned int j;
 	va_list ap;
 
 	va_start(ap, n);
@@ -17,10 +17,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	if (separator == NULL)
 		separator = "";
 
-	for (i = 0; i < n; i++)
+	for (j = 0; j < n; j++)
 	{
 		printf("%d", va_arg(ap, int));
-		if (i < n - 1)
+		if (j < n - 1)
 			printf("%s", separator);
 	}
 	printf("\n");
